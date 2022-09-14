@@ -1,0 +1,26 @@
+.left_leaf{
+    width:20%;
+    height:auto;
+    padding-right:18%;
+    margin-left:0;
+    margin-top:0;
+    position:absolute;
+    left:0;
+}
+.right_leaf{
+    width:20%;
+    height:auto;
+    padding-left:18%;
+    margin-right:0;
+    margin-top:0;
+    position:absolute;
+    right:0;
+}
+.akkio_logo{
+    width:5%;
+    height:auto;
+    padding-left:18%;
+    position:fixed;
+    right:5px;
+    bottom:5px
+}
