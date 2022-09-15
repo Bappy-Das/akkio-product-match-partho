@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { FromContext } from '../../function';
 
 const Page4 = () => {
-	const { register, handleSubmit, errors, onSubmit, watch } = useContext(FromContext);
+	const { register, handleSubmit, errors, onSubmit, watch,setValue } = useContext(FromContext);
     return (
         <div>
             <div class="vertical-center">
@@ -21,12 +21,20 @@ const Page4 = () => {
 						type="file"
 						id="file"
 						class="inputfile"
-						{...register('selfieFileName', { required: true })}
+						onChange={(e) => setValue("selfieFileName", e.target.files[0].name)}
+						// {...register('selfieFileName', {
+						// 	required: true,
+						// })}
 
 					/>
+					{/* <span style={{ display: 'none' }}>
+						{...register('selfieFileName:', {
+							required: true,
+						})}
+					</span> */}
 					<label for="file">
 						
-						<span id="file-name" class="file-box">{ watch('selfieFileName')[0]?.name}</span>
+					<span id="file-name" class="file-box">{ watch('selfieFileName')}</span>
 	        	    <span class="file-button">
 	        	      <i class="fa fa-upload" aria-hidden="true"></i>
 	        	      Select File

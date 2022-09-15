@@ -28,7 +28,7 @@ const defaultValues= {
 
 const FromDataProvider = ({ children }) => {
      const [step, setStep] = useState(1)
-    const { register, handleSubmit, formState,getValues,watch } = useForm({
+    const { register, handleSubmit, formState,getValues,watch,setValue  } = useForm({
           mode: 'onChange',
           reValidateMode: 'onChange',
           defaultValues, 
@@ -53,7 +53,8 @@ const FromDataProvider = ({ children }) => {
                 watch,
                 onSubmit,
                 priviousPage,
-                step
+                step,
+                setValue 
             }}>
             
             {children}
