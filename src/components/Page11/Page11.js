@@ -32,11 +32,11 @@ const Page11 = () => {
 	        		  </label>
 	        		</div>
 	        	&nbsp;
-	        	{
-					errors.q7_response && <div id="q1text" class="responses-div-style">
-						<p className='missing-response'>-- Please pick an option --</p>
+					<div id="q1text" class="responses-div-style">
+						{errors.q7_response && <p className='missing-response'>-- Please pick an option --</p>}
+						{selected == 4 && <p className='missing-response'>Yesss!</p>}
 					</div>
-				}
+
 	        	<button onClick={priviousPage} class="button-style">Back</button>&nbsp;<button type='submit' class="button-style">Next</button>
 	        </div>
         </div>

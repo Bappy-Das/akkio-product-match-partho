@@ -65,11 +65,15 @@ const Page7 = () => {
 	        		  </label>
 	        		</div>
 	        	&nbsp;
-	        	{
-					errors.q3_response && <div id="q1text" class="responses-div-style">
-						<p className='missing-response'>-- Please pick an option --</p>
-					</div>
-				}
+	        	<div id="q1text" class="responses-div-style">
+					{errors.q3_response && <p className='missing-response'>-- Please pick an option --</p>}
+					{selected ==1 && <p className='responses-text'>We've got you Covered</p>}
+					{selected ==2 && <p className='responses-text'>We've got you Covered</p>}
+					{selected ==3 && <p className='responses-text'>We've got you Covered</p>}
+					{selected ==4 && <p className='responses-text'>We've got you Covered</p>}
+					{selected ==5 && <p className='responses-text'>Lucky You!</p>}
+				</div>
+
 	        	<button onClick={priviousPage} class="button-style">Back</button>&nbsp;<button type='submit' class="button-style">Next</button>
 	        </div>
         </div>

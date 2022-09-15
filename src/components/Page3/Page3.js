@@ -2,14 +2,13 @@ import React, { useContext } from 'react';
 import { FromContext } from '../../function';
 
 const Page3 = () => {
-		const { register, handleSubmit, errors,onSubmit } = useContext(FromContext);
+		const { register, handleSubmit, errors,onSubmit,getValues } = useContext(FromContext);
     return (
         <div>
 	        <div class="vertical-center">
 
 
-	        	<h1>Hey there, <span id="userNamePrinted"></span>!</h1>
-
+				<h1>Hey there, <span id="userNamePrinted">{getValues("fullName").split(" ", 1)}</span>!</h1>
 
 	        	<center><p class="larger-font"> Thanks for your interest in Akkio! We will ask you for a selfie and then a set of questions. </p></center>
 
@@ -31,13 +30,18 @@ const Page3 = () => {
 						name="emailAddress"
 						class="get-started-div-input"
 						placeholder="Email"
-						{...register('emailAddress', { required: true })}
+						{...register('emailAddress', {
+							required: true,
+							pattern: {value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+								message: 'Please enter a valid email',
+							}})
+						}
 						
 					/>
 	        	</div>
 				<br />
 				{
-					errors.emailAddress && <div className="popup">
+					errors.streetAddress && <div className="popup">
 	        			<span className="popuptext show" id="namePopup">Please enter your address</span>
 	        		</div>
 				}

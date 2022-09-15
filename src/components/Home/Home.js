@@ -80,13 +80,13 @@ const Home = () => {
     return (
         <div>
             <div>
-                <img className='left_leaf' src={left_leaf} alt="" srcset=""/>
+                <img className='left_leaf' src={left_leaf} alt="" srcSet=""/>
             </div>
             <div>
-                <img className='right_leaf' src={right_leaf} alt="" srcset="" />
+                <img className='right_leaf' src={right_leaf} alt="" srcSet="" />
             </div>
             <div>
-                <img className='akkio_logo' src={akkio_logo} alt="" srcset="" />
+                <img className='akkio_logo' src={akkio_logo} alt="" srcSet="" />
             </div>
 
                 <form onSubmit={handleSubmit(onSubmit)}>

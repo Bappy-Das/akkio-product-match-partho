@@ -8,7 +8,7 @@ const Page1 = () => {
 	    const { register, handleSubmit, errors,onSubmit } = useContext(FromContext);
     return (
         <div> 
-            <img className='akkio-header-style' src={akkio_title_page} alt="" srcset=""/>
+            <img className='akkio-header-style' src={akkio_title_page} alt="" srcSet=""/>
 	        <h3 style={{marginBottom:'20px'}}>Next Gen Product Matching</h3>
 
 	        <p className="intro-text-style"> We're here to make your life easier by providing you with product recommendations that actually cater to your unique preferences, needs, and skin qualitites. Ready to get started? </p>
@@ -24,7 +24,7 @@ const Page1 = () => {
 				<button id="get_started_button" className="get-started-div-button" type='submit' >&#x27F6;</button>
 	        </div>
 
-	       <img className='akkio_cover' src={akkio_cover} alt="" srcset=""/>
+	       <img className='akkio_cover' src={akkio_cover} alt="" srcSet=""/>
         </div>
     );
 };

@@ -108,11 +108,10 @@ const { register, handleSubmit, errors,onSubmit,priviousPage } = useContext(From
 	        		  </label>
 	        		</div>
 				&nbsp;
-				{
-					errors.q4_response && <div id="q1text" class="responses-div-style">
-						<p className='missing-response'>-- Please pick an option --</p>
-					</div>
-				}
+				<div id="q1text" class="responses-div-style">
+					{errors.q4_response && <p className='missing-response'>-- Please pick an option --</p>}
+				</div>
+
 	        	
 	        	<button onClick={priviousPage}  class="button-style">Back</button>&nbsp;<button type='submit' class="button-style">Next</button>
 	        </div>

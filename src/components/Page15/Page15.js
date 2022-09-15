@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { FromContext } from '../../function';
 
 const Page15 = () => {
-	const { register, handleSubmit, errors,onSubmit } = useContext(FromContext);
+	const { register, handleSubmit, errors,onSubmit,priviousPage } = useContext(FromContext);
 	const [selected, setSelected] = useState(0);
   		const handleClick = (divNum) => () => {
   	  setSelected(divNum);
@@ -32,12 +32,10 @@ const Page15 = () => {
 	        		  </label>
 	        		</div>
 	        	&nbsp;
-	        	{
-					errors.q11_response && <div id="q1text" class="responses-div-style">
-						<p className='missing-response'>-- Please pick an option --</p>
-					</div>
-				}
-	        	<button class="button-style">Back</button>&nbsp;<button type='submit' class="button-style">Next</button>
+				<div id="q1text" class="responses-div-style">
+					{errors.q11_response && <p className='missing-response'>-- Please pick an option --</p>}
+				</div>
+	        	<button onClick={priviousPage}  class="button-style">Back</button>&nbsp;<button type='submit' class="button-style">Next</button>
 	        </div>
         </div>
     );

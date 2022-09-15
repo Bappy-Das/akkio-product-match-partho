@@ -162,8 +162,8 @@ label {
 
 .eyes-pics-style {
   padding-top: 10px;
-  height: 25%;
-  width: 25%;
+  height: 200px;
+  width: 200px;
   margin-left: 2%;
   margin-right: 2%;
   padding: 1%;
@@ -381,7 +381,6 @@ img {
   position: absolute;
   right: 3px; 
   top: 3px;
-  bottom: 3px;
   z-index: 2;
 }
 
@@ -470,14 +469,21 @@ img {
     display: flex;
     align-items: center;
 }
+.disclaimer input[type='radio'] {
+  opacity: 100;
+  position: relative;
+  width: 10px;
+  height: 10px;
+}
 
 /* HIDE RADIO */
-label[type=radio] { 
+[type=radio] { 
   position: absolute;
   opacity: 0;
   width: 0;
   height: 0;
 }
+
 
 
 
@@ -502,7 +508,6 @@ label[type=radio] {
 }
 
 .container-with-img {
-  position: relative;
   text-align: center;
   color: black;
   align-items: center;

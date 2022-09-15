@@ -28,7 +28,7 @@ const defaultValues= {
 
 const FromDataProvider = ({ children }) => {
      const [step, setStep] = useState(1)
-    const { register, handleSubmit, formState } = useForm({
+    const { register, handleSubmit, formState,getValues,watch } = useForm({
           mode: 'onChange',
           reValidateMode: 'onChange',
           defaultValues, 
@@ -42,8 +42,20 @@ const FromDataProvider = ({ children }) => {
         setStep(step - 1);
         console.log(data);
     };
+    console.log('aaaaaaaaaaa',getValues())
     return (
-        <FromContext.Provider value={{register, handleSubmit, errors:formState.errors ,onSubmit,priviousPage,step}}>
+        <FromContext.Provider value={
+            {
+                register,
+                handleSubmit,
+                getValues,
+                errors: formState.errors,
+                watch,
+                onSubmit,
+                priviousPage,
+                step
+            }}>
+            
             {children}
         </FromContext.Provider>
     );

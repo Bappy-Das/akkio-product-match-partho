@@ -17,7 +17,7 @@ const Page10 = () => {
 	        <div class="center-questions-mobile">
 	        	<p class="larger-font-gray">Question 6</p>
 	        	<p class="larger-font">Now picture yourself in a yellow or orange shirt. Does your face look brighter?</p>
-	        	<img style={{width:'20%',height:'auto',paddingTop:'0',marginTop:'0'}} src={yellow_orange} alt="" srcset=""/><br /><br />
+	        	<img style={{width:'20%',height:'auto',paddingTop:'0',marginTop:'0'}} src={yellow_orange} alt="" srcSet=""/><br /><br />
 	        	  <div data-toggle="buttons">
 	        		  <label className={selected == 1 ? 'mc-checked-style' : 'mc-default-style'} onClick={handleClick(1)} id="q6label1">
 	        		    <input type="radio" name="question6" id="q6option1" value="q6a" {...register('q6_response', { required: true })} onclick="buttonClicked();"/> Yes
@@ -33,11 +33,9 @@ const Page10 = () => {
 	        		  </label>
 	        		</div>
 	        	&nbsp;
-	        	{
-					errors.q6_response && <div id="q1text" class="responses-div-style">
-						<p className='missing-response'>-- Please pick an option --</p>
+					<div id="q1text" class="responses-div-style">
+						{errors.q6_response && <p className='missing-response'>-- Please pick an option --</p>}
 					</div>
-				}
 	        	<button onClick={priviousPage} class="button-style">Back</button>&nbsp;<button type='submit' class="button-style">Next</button>
 	        </div>
         </div>

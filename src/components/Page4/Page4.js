@@ -1,14 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FromContext } from '../../function';
 
 const Page4 = () => {
-	const { register, handleSubmit, errors,onSubmit } = useContext(FromContext);
+	const { register, handleSubmit, errors, onSubmit, watch } = useContext(FromContext);
     return (
         <div>
             <div class="vertical-center">
 	        	<center><p class="larger-font">Let's upload a head on selfie (including your face and neck). For higher accuracy, we recommend you take this photo with no or minimal makeup and avoid shadows across your face.</p></center>
-	        	<br/>
-
+				<br />
 				&nbsp;
 				{
 					errors.selfieFileName && <div className="popup">
@@ -25,8 +24,9 @@ const Page4 = () => {
 						{...register('selfieFileName', { required: true })}
 
 					/>
-	        	  <label for="file">
-	        	    <span id="file-name" class="file-box"></span>
+					<label for="file">
+						
+						<span id="file-name" class="file-box">{ watch('selfieFileName')[0]?.name}</span>
 	        	    <span class="file-button">
 	        	      <i class="fa fa-upload" aria-hidden="true"></i>
 	        	      Select File

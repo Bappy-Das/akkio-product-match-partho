@@ -24,14 +24,14 @@ const Page2 = () => {
 
 	        	<center><div style={{border:'1px dotted #f06a42',display:'inline-block',paddingBottom:'5px'}}>
 					<center><p class="larger-font">Do you opt in to our data protection policy?</p></center>
-					<p>
+					<p className='disclaimer'>
 						<input
 							type="radio"
 							name="disclaimerChecked"
 							value="yes"
 							id="disclaimer_id" {...register('disclaimerChecked', { required: true })}
 						/>
-						I agree
+						<label htmlFor="disclaimer_id">I agree</label>
 					</p>
 				</div>
 				</center>
